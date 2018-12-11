@@ -1,0 +1,14 @@
+.base {
+  color: #000;
+}
+
+.normal {
+  composes: base;
+  font-size: 20px;
+}
+
+$primary-color: #f40;
+
+:export {
+  primaryColor: $primary-color;
+}

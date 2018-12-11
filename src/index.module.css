@@ -1,0 +1,19 @@
+.menu-item {
+  display: inline-block;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.menu-item a {
+  color: #333;
+  text-decoration: none;
+}
+
+.menu-item a:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+.menu-item a.active {
+  color: blue;
+}
