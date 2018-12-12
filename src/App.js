@@ -12,10 +12,13 @@ import ReactHelmetExample from './examples/react-helmet/index';
 import DecoratorExample from './examples/decorator/index';
 import ReduxThunkExample from './examples/redux/index';
 import mobxExample from './examples/mobx'
+import ReactDndExample from './examples/react-dnd';
 import { spy } from 'mobx';
 import { observer, inject } from 'mobx-react';
 import routesConfig from './routes/index';
 import styles from './index.module.css';
+import { DragDropContextProvider } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 
 const history = createBrowserHistory();
 
@@ -42,18 +45,21 @@ class App extends Component {
         <Route exact path="/react-transition-group/decorator" component={DecoratorExample} />
         {/* <Route exact path="/redux/thunk" component={ReduxThunkExample} /> */}
         <Route exact path="/mobx" component={mobxExample} />
+        <Route exact path="/react-dnd" component={ReactDndExample} />
       </Fragment>
     )
   }
 
   render() {
     return (
-      <Router history={history}>
-        <div className="menu">
-          <ul>{this.renderLinks()}</ul>
-          {this.renderRoutes()}
-        </div>
-      </Router>
+      <DragDropContextProvider backend={HTML5Backend}>
+        <Router history={history}>
+          <div className="menu">
+            <ul>{this.renderLinks()}</ul>
+            {this.renderRoutes()}
+          </div>
+        </Router>
+      </DragDropContextProvider>
     );
   }
 

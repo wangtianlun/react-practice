@@ -25,4 +25,7 @@ export default [{
 }, {
   name: 'mobx',
   to: '/mobx'
+}, {
+  name: 'react-dnd',
+  to: '/react-dnd'
 }]

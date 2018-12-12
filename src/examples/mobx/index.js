@@ -9,6 +9,7 @@ class MobxExample extends React.Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.handleUpdateData = this.handleUpdateData.bind(this);
+    this.handleUpdateMapData = this.handleUpdateMapData.bind(this);
   }
 
   handleClick() {
@@ -23,6 +24,10 @@ class MobxExample extends React.Component {
      }, 1000)
   }
 
+  handleUpdateMapData() {
+    this.props.commonStore.updateMapData(Math.random(), Math.random());
+  }
+
   render() {
     return (
       <div>
@@ -31,14 +36,23 @@ class MobxExample extends React.Component {
 
         <button onClick={this.handleUpdateData}>update data </button>
         <label>name: {this.props.commonStore.data.foo}</label>
+      
+        <button onClick={this.handleUpdateMapData}>update data </button>
+        <label>name: {this.props.commonStore.data.foo}</label>
       </div>
     )
   }
 
   componentDidMount() {
     reaction(() => this.props.commonStore.data.foo, (data, reaction) => {
-      console.log('MobxExample reaction' + data)
+      console.log('MobxExample reaction1' + data)
     })
+
+    reaction(() => this.props.commonStore.mapData, (data, reaction) => {
+      console.log('MobxExample reaction2')
+      console.log(data);
+    })
+
     // autorun((reactive) => {
     //   console.log('MobxExample autorun ' + this.props.commonStore.name);
     // }, {
