@@ -13,6 +13,8 @@ import DecoratorExample from './examples/decorator/index';
 import ReduxThunkExample from './examples/redux/index';
 import mobxExample from './examples/mobx'
 import ReactDndExample from './examples/react-dnd';
+import ReactLoadable from './examples/react-loadable';
+import ReactLoadableVisibility from './examples/react-loadable-visibility/index';
 import { spy } from 'mobx';
 import { observer, inject } from 'mobx-react';
 import routesConfig from './routes/index';
@@ -46,6 +48,8 @@ class App extends Component {
         {/* <Route exact path="/redux/thunk" component={ReduxThunkExample} /> */}
         <Route exact path="/mobx" component={mobxExample} />
         <Route exact path="/react-dnd" component={ReactDndExample} />
+        <Route exact path="/react-loadable" component={ReactLoadable} />
+        <Route exact path="/react-loadable-visibility" component={ReactLoadableVisibility} />
       </Fragment>
     )
   }

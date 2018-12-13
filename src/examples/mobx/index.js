@@ -1,6 +1,7 @@
 import React from 'react';
 import { autorun, reaction } from 'mobx';
 import { inject, observer } from 'mobx-react';
+import ToJS from './toJS'
 
 @inject('commonStore')
 @observer
@@ -37,8 +38,7 @@ class MobxExample extends React.Component {
         <button onClick={this.handleUpdateData}>update data </button>
         <label>name: {this.props.commonStore.data.foo}</label>
       
-        <button onClick={this.handleUpdateMapData}>update data </button>
-        <label>name: {this.props.commonStore.data.foo}</label>
+        <ToJS />
       </div>
     )
   }

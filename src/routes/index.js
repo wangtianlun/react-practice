@@ -28,4 +28,10 @@ export default [{
 }, {
   name: 'react-dnd',
   to: '/react-dnd'
+}, {
+  name: 'react-loadable',
+  to: '/react-loadable'
+}, {
+  name: 'react-loadable-visibility',
+  to: '/react-loadable-visibility'
 }]
